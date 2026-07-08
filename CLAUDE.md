@@ -1,4 +1,4 @@
-# AI Co-worker Simulation Engine — Project Context (Version 2)
+# AI Co-worker Simulation Engine — Project Context
 
 ## 1. Tổng quan Dự án (Project Overview)
 
