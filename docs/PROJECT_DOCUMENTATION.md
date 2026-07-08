@@ -1,5 +1,5 @@
 # Tài liệu Thiết kế & Triển khai Chi tiết: AI Co-worker Simulation Engine
-## Gucci Group Case Study — Version 2
+## Gucci Group Case Study
 
 > **Triết lý thiết kế:** Chúng ta không xây dựng chatbot. Chúng ta xây dựng **nhân cách số** — những thực thể AI có mục tiêu riêng, ký ức riêng, và ranh giới riêng mà người dùng phải học cách "đọc vị" và hợp tác, giống hệt như làm việc với đồng nghiệp ngoài đời thực.
 
