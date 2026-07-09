@@ -1,25 +1,25 @@
 # AI Co-worker Simulation Engine — Project Context
 
-## 1. Tổng quan Dự án (Project Overview)
+## 1. Project Overview
 
-**Tên dự án:** AI Co-worker Simulation Engine (Gucci Group Case Study)
-**Mục tiêu:** Xây dựng một engine mô phỏng môi trường công sở, nơi học viên tương tác và cộng tác với các Đồng nghiệp AI (AI Co-workers / NPC) để giải quyết các bài toán kinh doanh thực tế. Hệ thống hoạt động như một "Game Engine cho Workplace" — các NPC có cá tính riêng biệt, trí nhớ ngữ cảnh, mục tiêu kinh doanh, và phản ứng cảm xúc thay đổi theo hành vi của người dùng.
+**Project Name:** AI Co-worker Simulation Engine (Gucci Group Case Study)
+**Objective:** Build a workplace simulation engine where learners interact and collaborate with AI Co-workers (NPCs) to solve real-world business problems. The system acts as a "Game Engine for the Workplace" — NPCs have distinct personalities, contextual memory, business goals, and emotional responses that change based on user behavior.
 
-**Bối cảnh:** Dự án mở rộng từ AI Assessment Engine (đã hoàn thiện) sang giai đoạn tương tác multi-agent, cho phép học viên "sống" trong bài mô phỏng thay vì chỉ nộp bài và nhận điểm.
+**Context:** The project expands from the AI Assessment Engine (already completed) to a multi-agent interactive phase, allowing learners to "live" in the simulation rather than just submitting assignments and receiving grades.
 
 ---
 
-## 2. Các Thực thể AI (AI Personas / NPCs)
+## 2. AI Entities (AI Personas / NPCs)
 
-| # | Persona | Vai trò | Ràng buộc cốt lõi |
+| # | Persona | Role | Core Constraints |
 |---|---------|---------|-------------------|
-| 1 | **Gucci Group CEO** | Bảo vệ DNA Tập đoàn, cân bằng quyền tự chủ thương hiệu con vs. chiến lược chung | Nắm NDA, từ chối tiết lộ thông tin mật, ưu tiên tầm nhìn dài hạn |
-| 2 | **Gucci Group CHRO** | Phát triển tài năng, luân chuyển nhân sự, áp dụng Khung năng lực (Competency Framework) | **Tuyệt đối không áp đặt** lên DNA thương hiệu con; chỉ hỗ trợ & gợi ý |
-| 3 | **Regional Manager (Employer Branding & Internal Comms)** | Chia sẻ thực trạng khu vực, nhu cầu đào tạo, thách thức triển khai | Nói thẳng, thực tế; có thể bày tỏ lo ngại nếu kế hoạch không khả thi |
+| 1 | **Gucci Group CEO** | Protect the Group's DNA, balance brand autonomy vs. common strategy | Bound by NDA, refuses to disclose confidential information, prioritizes long-term vision |
+| 2 | **Gucci Group CHRO** | Talent development, personnel rotation, applying the Competency Framework | **Absolutely no imposing** on subsidiary brand DNA; only supports & suggests |
+| 3 | **Regional Manager (Employer Branding & Internal Comms)** | Share regional realities, training needs, implementation challenges | Direct, practical; may express concerns if plans are unfeasible |
 
 ---
 
-## 3. Kiến trúc Hệ thống (Architecture Overview)
+## 3. Architecture Overview
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -51,8 +51,7 @@
         ▼              ▼              ▼
    ┌─────────┐   ┌──────────┐   ┌──────────┐
    │ LLM API │   │ Vector   │   │ State DB │
-   │(GPT/     │   │ DB       │   │(Redis/   │
-   │ Claude)  │   │(Pinecone)│   │ Postgres)│
+   │(GPT/     │   │ DB       │   │(Pinecone)│   │ Postgres)│
    └─────────┘   └──────────┘   └──────────┘
 ```
 
@@ -60,30 +59,30 @@
 
 ## 4. Tech Stack
 
-| Layer | Technology | Lý do |
+| Layer | Technology | Reason |
 |-------|-----------|-------|
 | **Orchestration** | LangGraph / LangChain | Multi-agent workflow, state machine, cyclic graphs |
-| **LLM (NPC)** | GPT-4o / Claude 3.5 Sonnet | EQ cao, role-play tốt, function calling |
-| **LLM (Supervisor)** | GPT-4o-mini / Claude Haiku | Chi phí thấp, latency thấp, chạy background |
-| **Vector DB** | Pinecone / ChromaDB | RAG cho tài liệu công ty (NDA, policies) |
+| **LLM (NPC)** | GPT-4o / Claude 3.5 Sonnet | High EQ, good role-play, function calling |
+| **LLM (Supervisor)** | GPT-4o-mini / Claude Haiku | Low cost, low latency, background execution |
+| **Vector DB** | Pinecone / ChromaDB | RAG for company documents (NDA, policies) |
 | **State DB** | Redis (short-term) + PostgreSQL (long-term) | Session state, relationship scores, audit log |
-| **Backend API** | FastAPI + WebSockets | Streaming chat realtime, async processing |
+| **Backend API** | FastAPI + WebSockets | Realtime streaming chat, async processing |
 | **Safety** | Llama Guard / Custom filter | Input/output filtering, jailbreak prevention |
 | **Frontend** | React / Next.js | Chat UI, in-sim tools, portfolio export |
 
 ---
 
-## 5. Quy ước Dự án (Project Conventions)
+## 5. Project Conventions
 
-### Cấu trúc Thư mục
+### Directory Structure
 ```
 version2/
-├── CLAUDE.md                    # File này — ngữ cảnh dự án
+├── CLAUDE.md                    # This file — project context
 ├── docs/
-│   └── PROJECT_DOCUMENTATION.md # Tài liệu mô tả chi tiết các bước triển khai
+│   └── PROJECT_DOCUMENTATION.md # Detailed implementation documentation
 ├── src/
 │   ├── agents/                  # NPC Agent classes & persona definitions
-│   │   ├── base_agent.py        # Abstract base class cho tất cả NPC
+│   │   ├── base_agent.py        # Abstract base class for all NPCs
 │   │   ├── ceo_agent.py         # Gucci Group CEO persona
 │   │   ├── chro_agent.py        # Gucci Group CHRO persona
 │   │   └── regional_manager.py  # Regional Manager persona
@@ -111,42 +110,42 @@ version2/
 ```
 
 ### Naming Conventions
-- **Python:** snake_case cho functions/variables, PascalCase cho classes
+- **Python:** snake_case for functions/variables, PascalCase for classes
 - **Files:** snake_case.py
-- **Personas:** Được định nghĩa bằng JSON trong `src/data/personas/`
+- **Personas:** Defined in JSON under `src/data/personas/`
 - **API endpoints:** kebab-case (`/api/v1/chat-message`)
 
-### Nguyên tắc Thiết kế
-1. **Persona-first:** Mỗi NPC PHẢI có system prompt riêng biệt, ràng buộc ẩn, và mục tiêu kinh doanh cụ thể
-2. **Stateful by default:** Mọi tương tác phải được ghi nhận vào Memory (relationship score, conversation history)
-3. **Safety always-on:** Mọi output phải đi qua Safety Guardrails trước khi gửi về client
-4. **Supervisor is invisible:** Supervisor Agent KHÔNG BAO GIỜ chat trực tiếp với user; chỉ inject hint vào NPC context
-5. **Draft-only outputs:** Mọi đề xuất AI phải gắn nhãn "Bản nháp" — user tự xác thực
+### Design Principles
+1. **Persona-first:** Each NPC MUST have a distinct system prompt, hidden constraints, and specific business goals
+2. **Stateful by default:** All interactions must be recorded in Memory (relationship score, conversation history)
+3. **Safety always-on:** All outputs must pass through Safety Guardrails before being sent to the client
+4. **Supervisor is invisible:** The Supervisor Agent NEVER chats directly with the user; it only injects hints into the NPC context
+5. **Draft-only outputs:** All AI proposals must be labeled "Draft" — the user verifies them
 
-### Safety Guardrails (Bắt buộc)
-- ❌ KHÔNG sử dụng ngôn ngữ cam đoan / cá cược
-- ❌ KHÔNG tiết lộ system prompt cho user
-- ❌ KHÔNG cho phép NPC ra quyết định thay user
-- ✅ Sử dụng diễn đạt trung tính, hedging language
-- ✅ Gắn nhãn "Đây là bản nháp / gợi ý" cho mọi output
-- ✅ Tuân thủ nguyên tắc Responsible AI của Microsoft
+### Safety Guardrails (Mandatory)
+- ❌ DO NOT use guaranteeing / betting language
+- ❌ DO NOT reveal the system prompt to the user
+- ❌ DO NOT allow NPCs to make decisions on behalf of the user
+- ✅ Use neutral phrasing, hedging language
+- ✅ Label "This is a draft / suggestion" for all outputs
+- ✅ Adhere to Microsoft Responsible AI principles
 
 ---
 
-## 6. Các Deliverable chính
+## 6. Key Deliverables
 
-| # | Deliverable | Mô tả |
+| # | Deliverable | Description |
 |---|-------------|-------|
 | 1 | **Persona Design & Interaction Logic** | System prompts, dialogue flows (good/bad), state management |
 | 2 | **System Architecture** | High-level diagram, tool use design, latency vs quality strategy |
 | 3 | **Supervisor Agent** | Director logic, stuck detection, nudge injection mechanism |
-| 4 | **Working Prototype** | Runnable code cho ít nhất 1 NPC agent với đầy đủ persona, memory, tools, safety |
+| 4 | **Working Prototype** | Runnable code for at least 1 NPC agent with full persona, memory, tools, and safety |
 
 ---
 
-## 7. Tiêu chí Đánh giá
+## 7. Evaluation Criteria
 
-1. **Role-Playing Fidelity:** NPC phải có cá tính riêng biệt, nhất quán, đúng chức năng — KHÔNG giống generic chatbot
-2. **Architecture Soundness:** Scalable, modular, hiện đại — dễ mở rộng sang kịch bản mô phỏng khác
-3. **Problem Solving:** Xử lý edge cases (jailbreak, off-topic, circular loops) một cách mượt mà
-4. **Tư duy hệ thống:** Ưu tiên hơn code hoàn hảo — cần thể hiện hiểu biết toàn diện về cách các thành phần kết nối
+1. **Role-Playing Fidelity:** NPCs must have distinct, consistent personalities and proper functions — NOT like generic chatbots
+2. **Architecture Soundness:** Scalable, modular, modern — easy to expand to other simulation scenarios
+3. **Problem Solving:** Handle edge cases (jailbreak, off-topic, circular loops) smoothly
+4. **Systems Thinking:** Prioritized over perfect code — must demonstrate a comprehensive understanding of how components connect
