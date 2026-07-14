@@ -64,9 +64,9 @@ version2/
 
 ```env
 OPENAI_API_KEY=sk-...
-URL_ENDPOINT=vtoken.viemind.ai   # OpenAI-compatible host → https://host/v1
-# OPENAI_BASE_URL=https://vtoken.viemind.ai/v1  # optional full override
-LLM_PROVIDER=openai              # openai | mock
+URL_ENDPOINT=   # OpenAI-compatible host → https://host/v1
+# OPENAI_BASE_URL= # optional full override
+LLM_PROVIDER=                    # openai | mock
 LLM_MODEL=gemini-2.5-flash       # Model for NPC Agent (as exposed by gateway)
 LLM_MINI_MODEL=gemini-2.5-flash  # Model for short tasks / Supervisor
 REDIS_URL=redis://localhost:6379
