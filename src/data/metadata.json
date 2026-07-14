@@ -1,0 +1,48 @@
+{
+  "industry": "Bán lẻ (Retail) / Thời trang Xa xỉ & Bán lẻ (Sản phẩm xa xỉ)",
+  "sub_industry_tags": [
+    "Thời trang & Đồ da",
+    "Phụ kiện",
+    "Trang sức",
+    "Nước hoa/Mỹ phẩm",
+    "Đa kênh (Omnichannel)"
+  ],
+  "sector": {
+    "primary": "Phát triển Lãnh đạo & Bản thân",
+    "secondary": "Kinh doanh"
+  },
+  "function": "Nhân sự (HR) / Con người & Văn hóa (People & Culture)",
+  "role_family": "Phát triển Tài năng & Năng lực Lãnh đạo",
+  "roles": [
+    "Quản lý Chương trình Phát triển Lãnh đạo (Leadership Development Program Manager)",
+    "Quản lý Phát triển Tổ chức (Organization Development Manager)",
+    "Chuyên viên / Chuyên viên cao cấp Phát triển Tổ chức"
+  ],
+  "levels": [
+    "Nhân viên chính thức (Associate)",
+    "Trung cấp (Mid)",
+    "Cao cấp (Senior)"
+  ],
+  "mode": "Đào tạo (Nhiều module) + Tuyển dụng/Đánh giá năng lực (Tính giờ).",
+  "duration": {
+    "training": "3 modules, tổng thời gian ~120-150 phút.",
+    "recruitment": "45-60 phút."
+  },
+  "taxonomy": [
+    "Định hình bài toán (Problem framing)",
+    "Lập sơ đồ các bên liên quan & Truyền thông điều hành (Exec comms)",
+    "Thiết kế mô hình năng lực",
+    "Thiết kế đánh giá",
+    "Thiết kế chương trình",
+    "Quản trị sự thay đổi & Triển khai phân cấp",
+    "Đo lường & Báo cáo thông tin chuyên sâu"
+  ],
+  "outputs": [
+    "Mô hình năng lực (Phiên bản 1)",
+    "bản thiết kế chi tiết 360°",
+    "kế hoạch khai vấn & quản trị sự thay đổi",
+    "kế hoạch đo lường thử nghiệm",
+    "các tài liệu/sản phẩm đầu ra chuẩn chỉnh để nhà tuyển dụng đánh giá"
+  ],
+  "optional_genai_layer": "Tích hợp công cụ AI gồm: 'AI soạn thảo năng lực', 'AI tổng hợp phản hồi', 'AI lập kế hoạch triển khai' để đẩy nhanh tiến độ thực hiện các chủ đề."
+}
